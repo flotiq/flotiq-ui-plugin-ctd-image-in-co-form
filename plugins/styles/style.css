@@ -8,6 +8,11 @@
   max-height: 500px;
 }
 
+.mode-dark .plugin-ctd-image-in-co-form {
+  background-color: #020617;
+  color: white;
+}
+
 .plugin-ctd-image-in-co-form__title {
   font-weight: 700;
   font-size: 16px;
