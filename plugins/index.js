@@ -1,9 +1,10 @@
 import { registerFn } from "../common/plugin-element-cache";
 import pluginInfo from "../plugin-manifest.json";
 import cssString from "inline:./styles/style.css";
-import { handleGridPlugin } from "./grid-renderers";
+import { handleSidebarAdd } from "./sidebar";
+import i18n from "../i18n";
 
-registerFn(pluginInfo, (handler, client) => {
+registerFn(pluginInfo, (handler, client, { getLanguage }) => {
   /**
    * Add plugin styles to the head of the document
    */
@@ -14,7 +15,18 @@ registerFn(pluginInfo, (handler, client) => {
     document.head.appendChild(style);
   }
 
-  handler.on("flotiq.grid.cell::render", (data) =>
-    handleGridPlugin(data, client, pluginInfo),
+  const language = getLanguage();
+  if (language !== i18n.language) {
+    i18n.changeLanguage(language);
+  }
+
+  handler.on("flotiq.language::changed", ({ language }) => {
+    if (language !== i18n.language) {
+      i18n.changeLanguage(language);
+    }
+  });
+
+  handler.on("flotiq.form.sidebar-panel::add", (data) =>
+    handleSidebarAdd(data, client, pluginInfo),
   );
 });

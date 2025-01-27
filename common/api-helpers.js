@@ -1,17 +1,15 @@
-const cachedRelationData = {};
+const cachedImages = {};
 
-const getRelationData = (client, dataUrl) => {
+const getCtdFeaturedImage = (client, dataUrl) => {
   if (!dataUrl) return null;
-  if (cachedRelationData[dataUrl]) return cachedRelationData[dataUrl];
-  const { contentTypeName, id } = dataUrl.match(
-    /(?<contentTypeName>[^/]+)\/(?<id>[^/]+)$/,
-  ).groups;
 
-  cachedRelationData[dataUrl] = client[contentTypeName]
-    .get(id)
-    .then(({ body }) => body);
+  const id = dataUrl.split("/api/v1/content/_media/")?.pop();
+  if (!id) return null;
 
-  return cachedRelationData[dataUrl];
+  if (cachedImages[id]) return cachedImages[id];
+  cachedImages[id] = client["_media"].get(id).then(({ body }) => body);
+
+  return cachedImages[id];
 };
 
-export { getRelationData };
+export { getCtdFeaturedImage };

@@ -1,13 +1,13 @@
 {
-  "id": "flotiq.plain-js-template",
-  "name": "Plain JS Plugin Template",
-  "description": "A plain js example of Flotiq plugin. This plugin changes the rendering of some data in the grid. It renders colorful text properties, bold numbers, and relations as text.",
-  "version": "0.1.3",
-  "repository": "https://github.com/flotiq/flotiq-ui-plugin-templates-plain-js",
+  "id": "flotiq.ctd-image-in-co-form",
+  "name": "Display Content Type image in Object forms",
+  "description": "This plugin displays a featured image from the content type in the content object form.",
+  "version": "0.1.0",
+  "repository": "https://github.com/flotiq/flotiq-ui-plugin-ctd-image-in-co-form",
   "url": "https://localhost:3053/index.js",
   "permissions": [
     {
-      "ctdName": "*",
+      "ctdName": "_media",
       "canRead": true,
       "type": "CO"
     }

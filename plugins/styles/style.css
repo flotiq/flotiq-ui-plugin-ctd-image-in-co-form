@@ -1,8 +1,21 @@
-@font-face {
-  font-family: "Roboto Mono";
-  src: url(./RobotoMono-Medium.ttf) format("truetype");
+.plugin-ctd-image-in-co-form {
+  background-color: white;
+  border-radius: 10px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 16px;
+  max-height: 500px;
 }
 
-.plugin-name-cell-renderer {
-  font-family: "Roboto Mono", monospace;
+.plugin-ctd-image-in-co-form__title {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.plugin-ctd-image-in-co-form > img {
+  margin: auto;
+  width: 100%;
+  max-width: 500px;
 }
