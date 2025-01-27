@@ -1,7 +1,7 @@
 {
   "id": "flotiq.ctd-image-in-co-form",
   "name": "Display Content Type image in Object forms",
-  "description": "This plugin displays a featured image from the content type in the content object form.",
+  "description": "This plugin displays a featured image from the Content Type in the Content Object form.",
   "version": "0.1.0",
   "repository": "https://github.com/flotiq/flotiq-ui-plugin-ctd-image-in-co-form",
   "url": "https://localhost:3053/index.js",
